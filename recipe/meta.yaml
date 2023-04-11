@@ -50,7 +50,7 @@ about:
   dev_url: https://github.com/erdewit/nest_asyncio
 
 extra:
+  anaconda-services:
+    ref: https://anaconda.zendesk.com/agent/tickets/34532
   recipe-maintainers:
-    - yehoshuadimarsky
-    - SylvainCorlay
-    - dhirschfeld
+    - ianaobi
