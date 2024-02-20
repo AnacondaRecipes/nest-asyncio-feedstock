@@ -1,6 +1,6 @@
 {% set name = "nest-asyncio" %}
 {% set nameUnderscore = "nest_asyncio" %}
-{% set version = "1.5.6" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,19 +8,19 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ nameUnderscore[0] }}/{{ nameUnderscore }}/{{ nameUnderscore }}-{{ version }}.tar.gz
-  sha256: d267cc1ff794403f7df692964d1d2a3fa9418ffea2a3f6859a439ff482fef290
+  sha256: 6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe
 
 build:
   skip: True  # [py<35]
   number: 0
-  script: {{ PYTHON }} -m pip install --no-deps . -vv
+  script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation . -vv
 
 requirements:
   host:
     - python
     - pip
-    - setuptools
-    - setuptools_scm
+    - setuptools >=42
+    - setuptools_scm >=3.4.3
     - toml
     - wheel
   run:
